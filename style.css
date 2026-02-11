@@ -1,178 +1,25 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.photo-frame{
+	width:300px;
+	border: 5px solid blue;
+	margin:10px;
+	padding:15px;
 }
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #111;
-  color: #eee;
-  line-height: 1.6;
+.marksheet { 
+	border: 3px solid black; 
+	width: 80%; 
+	margin-top: 20px; 
 }
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background: #000;
-  border-bottom: 1px solid #444;
+.marksheet thead { 
+	background-color: pink; 
+	font-weight: bold;
 }
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: gold;
+.marksheet tbody tr:nth-child(even) { 
+	background-color: gray;
 }
-.logo span{
-	color:white
+.marksheet tbody tr:nth-child(odd) { 
+	background-color: white; 
 }
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  color: #eee;
-  transition: color 0.3s;
-}
-
-.navbar ul li a:hover {
-  color: gold;
-}
-
-.nav-buttons .btn {
-  margin-left: 10px;
-}
-
-/* Buttons */
-.btn {
-  padding: 8px 16px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-.btn.gold {
-  background: gold;
-  color: #000;
-}
-
-.btn.dark {
-  background: #333;
-  color: #eee;
-}
-
-/* Hero Section */
-.hero {
-  display: flex;
-  justify-content: space-between;
-  padding: 60px 40px;
-  border-top: 1px solid #444;
-}
-
-.hero-left {
-  flex: 1;
-  padding-right: 40px;
-}
-
-.hero-left h1 {
-  font-size: 2.5rem;
-  color: white;
-}
-.hero-left h1 span{
-	font-size:2.5rem;
-	color:gold;
-}
-
-.hero-left p {
-  margin: 20px 0;
-  max-width: 500px;
-}
-
-.hero-buttons {
-  margin: 20px 0;
-}
-
-.stats {
-  display: flex;
-  gap: 40px;
-  margin-top: 30px;
-}
-
-.stats div {
-  text-align: center;
-}
-
-.stats strong {
-  font-size: 1.5rem;
-  color: gold;
-}
-
-/* Right Section */
-.hero-right {
-  flex: 1;
-  background: #222;
-  padding: 30px;
-  border-left: 2px solid #444;
-  text-align: left;
-  border-radius: 8px 0 0 8px;
-}
-
-.hero-right h2 {
-  color: gold;
-  margin-bottom: 15px;
-}
-
-.price {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-}
-
-.positive {
-  color: #4caf50;
-}
-
-.negative {
-  color: #f44336;
-}
-
-.metal-prices {
-  list-style: none;
-  text-align: leftt;
-}
-
-.metal-prices li {
-  margin: 10px 0;
-}
-
-/* Responsive Design */
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-  }
-  .hero-left{
-	flex: unset;
-    width: 100%;
-    margin-bottom: 30px;
-    text-align: left;
-    border-left: none;
-  }
-  .hero-right {
-    flex: unset;
-    width: 100%;
-	height:50%;
-    margin-bottom: 30px;
-    text-align: left;
-    border-left: none;
-  }
-  .metal-prices {
-    text-align: left;
-  }
+.marksheet th,
+.marksheet td {
+	border: 3px solid black;
 }
