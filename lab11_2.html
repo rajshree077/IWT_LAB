@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>24bcsf53</title>
+<style>
+body{
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	height=100vh;
+	margin: 0;
+	background: beige;
+	font-family: Arial;
+}
+.card{
+	background: white;
+	padding:40px;
+	border-radius: 12px;
+	box-shadow: 0 4px 15px rgba(0,0,0,2)
+	width: 350px;
+}
+.card h2{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.card input[type="text"], 
+.card input[type="password"]{
+	width= 100%;
+	padding: 10px;
+	margin: 8px 0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.card label{
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	margin: 10px 0;
+}
+.card button { 
+	width: 100%; 
+	padding: 10px; 
+	background: green; 
+	color: white; 
+	border: none; 
+	border-radius: 5px; 
+	cursor: pointer; 
+	font-size: 16px; 
+}
+.card button: hover {
+	background: darkgreen;
+}
+</style>
+<body>
+	<div>
+		<div class="card">
+			<h2>Login</h2>
+			<form>
+				<input type="text" placeholder="username" required><br>
+				<input type="password" placeholder="Password" required>
+				<label>
+					<input type="checkbox">Remember Me 
+				</label>
+				<button type="submit">Login</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>		
+		
+		
