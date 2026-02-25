@@ -1,0 +1,27 @@
+<html> 
+<head>
+<title>24bcsf53</title>
+<script>
+let a=[12,45,7,23,89];
+let sum=0;
+let largest=a[0];
+let smallest=a[0];
+let i;
+for(i=0;i<a.length;i++){
+sum=sum+a[i];
+if(a[i]>largest){
+largest=a[i];
+}
+if (a[i]<smallest){
+smallest=a[i];
+}
+}
+let avg=sum/a.length;
+document.write("Sum: " + sum + "<br>"); 
+document.write("Average: " + avg + "<br>"); 
+document.write("Largest: " + largest + "<br>"); 
+document.write("Smallest: " + smallest + "<br>");
+</script>
+<body bgcolor="white" text="black">
+</head>
+</html>

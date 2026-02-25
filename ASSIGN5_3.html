@@ -1,0 +1,23 @@
+<html> 
+<head>
+<title>24bcsf53</title>
+<script>
+let num=121;
+let og=num;
+let rev=0;
+while(num!=0)
+{
+let digit=num%10;
+rev=rev*10+digit;
+num=Math.floor(num/10);
+}
+if (og==rev){
+document.write("Palindrome");
+}
+else{
+document.write("Not Palindrome");
+}
+</script>
+<body bgcolor="white" text="black">
+</head>
+</html>
