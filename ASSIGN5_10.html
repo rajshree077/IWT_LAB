@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>24bcsf53<title>
+<script>
+function odd_even(num){
+let even=[];
+let odd=[];
+for(let n of num){
+if (n%2==0){
+even.push(n);
+}
+else{
+odd.push(n);
+}
+}
+return { even,odd };
+}
+let a=[3,26,45,54,36,1];
+let result = odd_even(a);
+document.write("Even numbers:", result.even,"<br>");
+document.write("Odd numbers:", result.odd,"</br>");
+</script>
+<body bgcolor="white" text="black">
+</head>
+</html>
