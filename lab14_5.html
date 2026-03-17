@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simultaneous Color Change</title>
+</head>
+<body>
+
+<div id="d1" style="width:100px;height:100px;border:1px solid black;display:inline-block;">
+  <button onclick="changeAll()">Red</button>
+</div>
+
+<div id="d2" style="width:100px;height:100px;border:1px solid black;display:inline-block;">
+  <button onclick="changeAll()">Blue</button>
+</div>
+
+<div id="d3" style="width:100px;height:100px;border:1px solid black;display:inline-block;">
+  <button onclick="changeAll()">Green</button>
+</div>
+
+<div id="d4" style="width:100px;height:100px;border:1px solid black;display:inline-block;">
+  <button onclick="changeAll()">Yellow</button>
+</div>
+
+<script>
+  let colors = ["red", "blue", "green", "orange"];
+  let divs = ["d1", "d2", "d3", "d4"];
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+  }
+
+  function changeAll() {
+    shuffle(colors); // randomize colors
+
+    for (let i = 0; i < divs.length; i++) {
+      document.getElementById(divs[i]).style.backgroundColor = colors[i];
+    }
+  }
+</script>
+
+</body>
+</html>
