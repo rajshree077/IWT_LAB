@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>24bcsf53</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .gender-options {
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    #errorMsg {
+      margin-top: 15px;
+      color: red;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Registration Form</h2>
+  <form id="regForm" onsubmit="return validateForm()">
+    
+    <label>Name:</label>
+    <input type="text" id="name">
+
+    <label>Gender:</label>
+    <div class="gender-options">
+      <input type="radio" name="gender" value="Male"> Male
+      <input type="radio" name="gender" value="Female"> Female
+    </div>
+
+    <label>Mobile:</label>
+    <input type="text" id="mobile">
+
+    <label>Address:</label>
+    <textarea id="address"></textarea>
+
+    <label>Country:</label>
+    <select id="country">
+      <option value="">--Select--</option>
+      <option value="India">India</option>
+      <option value="USA">USA</option>
+      <option value="UK">UK</option>
+      <option value="Australia">Australia</option>
+    </select>
+
+    <label>Email:</label>
+    <input type="text" id="email">
+
+    <label>Password:</label>
+    <input type="password" id="password">
+
+    <button type="submit">Register</button>
+  </form>
+  <p id="errorMsg"></p>
+</div>
+
+<script>
+function validateForm() {
+  let name = document.getElementById("name").value.trim();
+  let gender = document.querySelector('input[name="gender"]:checked');
+  let mobile = document.getElementById("mobile").value.trim();
+  let address = document.getElementById("address").value.trim();
+  let country = document.getElementById("country").value;
+  let email = document.getElementById("email").value.trim();
+  let password = document.getElementById("password").value.trim();
+  let errorMsg = document.getElementById("errorMsg");
+
+  // Check empty fields
+  if (!name || !gender || !mobile || !address || !country || !email || !password) {
+    errorMsg.innerText = "All fields are required!";
+    return false;
+  }
+
+  // Mobile validation (10 digits)
+  let mobilePattern = /^[0-9]{10}$/;
+  if (!mobilePattern.test(mobile)) {
+    errorMsg.innerText = "Mobile number must be 10 digits!";
+    return false;
+  }
+
+  // Email validation
+  let emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+  if (!emailPattern.test(email)) {
+    errorMsg.innerText = "Invalid email format!";
+    return false;
+  }
+
+  // Password length validation
+  if (password.length < 6 || password.length > 15) {
+    errorMsg.innerText = "Password must be 615 characters long!";
+    return false;
+  }
+
+  // Success
+  errorMsg.style.color = "green";
+  errorMsg.innerText = "Registration Successful!";
+  return false; // prevent actual form submission for demo
+}
+</script>
+
+</body>
+</html>
