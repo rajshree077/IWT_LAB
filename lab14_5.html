@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>24bcsf53</title>
+</head>
+<body>
+<input type="number" id="num" placeholder="Enter a number">
+<button onclick="checkPrime()">Check Prime</button>
+<script>
+function checkPrime() {
+    let n = parseInt(document.getElementById("num").value);
+    if (n < 2) {
+        alert("Not Prime");
+        return;
+    }
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            alert("Not Prime");
+            return;
+        }
+    }
+    alert("Prime!");
+}
+</script>
+</body>
+</html>

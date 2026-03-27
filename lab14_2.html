@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>24bcsf53</title>
+</head>
+<body>
+<p id="togglePara">This is a paragraph you can hide or show.</p>
+<button id="toggleBtn" onclick="toggleVisibility()">Hide Paragraph</button>
+
+<script>
+  function toggleVisibility() {
+    const p = document.getElementById('togglePara');
+    const btn = document.getElementById('toggleBtn');
+    
+    if (p.style.display === "none") {
+      p.style.display = "block";
+      btn.innerText = "Hide Paragraph";
+    } else {
+      p.style.display = "none";
+      btn.innerText = "Show Paragraph";
+    }
+  }
+</script>
+</body>
+</html>

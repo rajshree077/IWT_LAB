@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>24bcsf53</title>
+</head>
+<body>
+<input type="text" id="counter" value="0" readonly>
+<button onclick="increase()">+</button>
+<button onclick="decrease()">-</button>
+<script>
+function increase() {
+    let box = document.getElementById("counter");
+    box.value = parseInt(box.value) + 1;
+}
+function decrease() {
+    let box = document.getElementById("counter");
+    if (parseInt(box.value) > 0) {
+        box.value = parseInt(box.value) - 1;
+    }
+}
+</script>
+</body>
+</html>

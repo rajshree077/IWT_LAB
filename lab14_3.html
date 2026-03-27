@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>24bcsf53</title>
+</head>
+<body>
+<div id="colorBox" style="width:200px;height:100px;border:1px solid;"></div><br>
+<button onclick="changeColor('red')">Red</button>
+<button onclick="changeColor('green')">Green</button>
+<button onclick="changeColor('blue')">Blue</button>
+<script>
+function changeColor(color) {
+    if (confirm("Do you really want to change the background color?")) {
+        document.getElementById("colorBox").style.backgroundColor = color;
+    }
+}
+</script>
+</body>
+</html>
