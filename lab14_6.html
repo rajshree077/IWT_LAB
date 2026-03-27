@@ -1,0 +1,128 @@
+<html
+<head>
+  <title>24bcsf53</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .converter {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    .converter h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .row {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    select, input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    #output {
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+
+<div class="converter">
+  <h2>Currency Converter</h2>
+  
+  <div class="row">
+    <label for="from">From:</label>
+    <select id="from">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="INR">INR</option>
+      <option value="AUD">AUD</option>
+    </select>
+    <input type="number" id="amt" placeholder="Enter amount">
+  </div>
+  
+  <div class="row">
+    <label for="to">To:</label>
+    <select id="to">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="INR" selected>INR</option>
+      <option value="AUD">AUD</option>
+    </select>
+    <input type="text" id="converted" readonly placeholder="Converted value">
+  </div>
+  
+  <button onclick="convert()">Convert</button>
+  <p id="output"></p>
+</div>
+
+<script>
+const conversionRates = {
+  USD: { EUR: 0.93, GBP: 0.82, INR: 82.74, AUD: 1.47 },
+  EUR: { USD: 1.08, GBP: 0.88, INR: 89.06, AUD: 1.58 },
+  GBP: { USD: 1.22, EUR: 1.14, INR: 101.5, AUD: 1.80 },
+  INR: { USD: 0.012, EUR: 0.011, GBP: 0.0098, AUD: 0.018 },
+  AUD: { USD: 0.68, EUR: 0.63, GBP: 0.55, INR: 55.87 }
+};
+
+function convert() {
+  let amt = parseFloat(document.getElementById("amt").value);
+  let from = document.getElementById("from").value;
+  let to = document.getElementById("to").value;
+
+  if (isNaN(amt) || amt <= 0) {
+    document.getElementById("output").innerText = "Please enter a valid amount.";
+    return;
+  }
+
+  if (from === to) {
+    document.getElementById("converted").value = amt.toFixed(2);
+    document.getElementById("output").innerText = `Converted: ${amt.toFixed(2)} ${to}`;
+    return;
+  }
+
+  let rate = conversionRates[from][to];
+  let result = amt * rate;
+  document.getElementById("converted").value = result.toFixed(2);
+  document.getElementById("output").innerText = `Converted: ${result.toFixed(2)} ${to}`;
+}
+</script>
+
+</body>
+</html>
